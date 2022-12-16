@@ -1,0 +1,3 @@
+{:require [min.event]
+ :nrepl   {:port 25555 :middleware [cider.nrepl/cider-middleware]}
+ :deps    true}
