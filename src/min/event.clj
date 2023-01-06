@@ -31,14 +31,14 @@
                                    (.getEntity event))))
 
 
-
-
 (comment
-  (def p (->> (min.api.plugin/get-server) .getOnlinePlayers first) )
+  (def p (->> (min.api.plugin/get-server) .getOnlinePlayers first))
+  
+  (.sendRawMessage p (chat [:white [:gold "Panthevm"] [:gray " : "] "Hello World"]))
+
   (min.api.schedule/run-task
    (fn [] 
      (.setGameMode p org.bukkit.GameMode/CREATIVE)))
 
-  (min.hologram/create (.getLocation p) "§e123")
   (min.api.event/unregister-all)
   (min.api.event/get-registered-listeners))
